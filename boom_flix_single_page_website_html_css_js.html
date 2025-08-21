@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BoomFlix — Daily Entertainment & Viral Videos</title>
+  <meta name="description" content="BoomFlix brings you daily entertainment, viral videos, and short clips. Watch, laugh, and share!" />
+  <meta name="theme-color" content="#d11313" />
+  <!-- Open Graph for Facebook/WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BoomFlix — Daily Entertainment & Viral Videos" />
+  <meta property="og:description" content="Follow BoomFlix for fun & entertainment, trending and viral videos every day." />
+  <meta property="og:url" content="https://your-domain.example/boomflix" />
+  <!-- TODO: replace with a publicly hosted 1200x630 image url -->
+  <meta property="og:image" content="https://your-domain.example/boomflix/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BoomFlix — Daily Entertainment & Viral Videos" />
+  <meta name="twitter:description" content="Daily entertainment and viral videos. Watch now!" />
+  <meta name="twitter:image" content="https://your-domain.example/boomflix/og-image.jpg" />
+
+  <style>
+    :root{
+      --brand:#e21b1b;     /* BoomFlix red */
+      --brand-dark:#b31313;
+      --ink:#0e0f12;
+      --bg:#0a0b0e;
+      --card:#13151b;
+      --muted:#9aa0ab;
+      --soft:#232634;
+      --ok:#31c48d;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font:15px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Arial; color:#f7f8fa; background:radial-gradient(1200px 600px at 10% -20%, rgba(226,27,27,.25), rgba(226,27,27,0)), var(--bg);}    
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
+    /* Header */
+    .nav{position:sticky; top:0; z-index:50; background:rgba(10,11,14,.75); backdrop-filter: blur(10px); border-bottom:1px solid rgba(255,255,255,.06);}    
+    .wrap{max-width:1100px; margin:0 auto; padding:14px 18px;}
+    .row{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .brand{display:flex; align-items:center; gap:10px}
+    .logo{width:36px; height:36px; border-radius:10px; background:linear-gradient(180deg, var(--brand), var(--brand-dark)); display:grid; place-items:center; font-weight:900}
+    .logo span{font-size:14px}
+    .brand h1{font-size:18px; margin:0; letter-spacing:.5px}
+    .navlinks{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{border:0; cursor:pointer; padding:10px 14px; border-radius:999px; background:var(--brand); color:#fff; font-weight:700}
+    .btn.ghost{background:transparent; border:1px solid #ffffff22}
+    .btn:hover{filter:brightness(1.08)}
+
+    /* Hero */
+    .hero{position:relative; overflow:hidden;}
+    .hero .wrap{display:grid; grid-template-columns:1.2fr .8fr; gap:24px; padding:40px 18px 26px}
+    .tag{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px; border:1px solid #ffffff22; background:rgba(255,255,255,.04); color:#fff; font-weight:600; font-size:13px}
+    .h1{font-size:44px; line-height:1.1; margin:10px 0 8px; font-weight:900; letter-spacing:.3px}
+    .lede{color:#eaecee; opacity:.9}
+    .cta{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
+    .mock{border-radius:16px; border:1px solid #ffffff18; box-shadow:0 20px 60px rgba(0,0,0,.4); overflow:hidden}
+
+    /* Sections */
+    section{padding:26px 0}
+    h2{margin:0 0 10px; font-size:22px}
+    .grid{display:grid; gap:14px}
+
+    .cats{grid-template-columns:repeat(auto-fit, minmax(180px,1fr))}
+    .card{background:var(--card); border:1px solid #ffffff14; border-radius:16px; padding:14px}
+    .card:hover{transform:translateY(-2px); transition:.2s; box-shadow:0 10px 30px rgba(0,0,0,.25)}
+
+    .videos{grid-template-columns:repeat(auto-fit, minmax(220px,1fr))}
+    .video{border:1px solid #ffffff12; border-radius:14px; overflow:hidden; background:#0e1016}
+    .thumb{aspect-ratio:16/9; background:linear-gradient(180deg, #2b2e3a, #171923)}
+    .meta{padding:10px 12px}
+    .meta .t{font-weight:700}
+    .meta .s{color:var(--muted); font-size:12px}
+
+    .newsletter .card{display:grid; grid-template-columns:1.2fr .8fr; align-items:center; gap:14px}
+    .newsletter input{width:100%; background:#0e1016; color:#fff; border:1px solid #ffffff22; padding:12px 14px; border-radius:10px}
+
+    .footer{margin-top:24px; padding:18px 0; border-top:1px solid #ffffff14; color:#c9ced9}
+
+    @media (max-width:900px){
+      .hero .wrap{grid-template-columns:1fr}
+      .h1{font-size:36px}
+      .newsletter .card{grid-template-columns:1fr}
+    }
+  </style>
+
+  <!-- Simple structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BoomFlix",
+    "url": "https://your-domain.example/boomflix",
+    "description": "Daily entertainment & viral videos",
+    "sameAs": ["https://facebook.com/yourpage", "https://youtube.com/@yourhandle"]
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap row">
+      <a class="brand" href="#home">
+        <div class="logo"><span>BF</span></div>
+        <h1>BoomFlix</h1>
+      </a>
+      <nav class="navlinks">
+        <a class="btn ghost" href="#videos">Videos</a>
+        <a class="btn ghost" href="#categories">Categories</a>
+        <a class="btn ghost" href="#about">About</a>
+        <button class="btn" onclick="shareSite()">Share</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="wrap">
+        <div>
+          <span class="tag">✔ Official · Daily Entertainment</span>
+          <div class="h1">BoomFlix — Fun, Trending & Viral Videos Daily</div>
+          <p class="lede">Follow BoomFlix for laugh-out-loud moments, short clips, and highlights. New videos drop every day — watch, share and enjoy! </p>
+          <div class="cta">
+            <a href="#videos" class="btn">Watch Latest</a>
+            <a href="#about" class="btn ghost">Learn more</a>
+          </div>
+        </div>
+        <div class="mock">
+          <!-- Replace src with your banner or screenshot -->
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop" alt="BoomFlix preview" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="categories">
+      <div class="wrap">
+        <h2>Popular Categories</h2>
+        <div class="grid cats">
+          <div class="card">😂 Comedy</div>
+          <div class="card">🔥 Trending</div>
+          <div class="card">🎵 Music</div>
+          <div class="card">🎮 Gaming</div>
+          <div class="card">⚽ Sports</div>
+          <div class="card">🎭 Drama</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos">
+      <div class="wrap">
+        <h2>Latest Videos</h2>
+        <div id="videoGrid" class="grid videos"></div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER / CTA -->
+    <section class="newsletter">
+      <div class="wrap">
+        <div class="card">
+          <div>
+            <h2>Get Daily Drops</h2>
+            <p class="lede">Subscribe for one juicy email per day. Zero spam, only fun.</p>
+          </div>
+          <form onsubmit="subscribe(event)">
+            <div class="row" style="gap:8px">
+              <input id="email" type="email" placeholder="your@email.com" required />
+              <button class="btn" type="submit">Subscribe</button>
+            </div>
+            <small id="subMsg" style="color:var(--muted)"></small>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap">
+        <h2>About BoomFlix</h2>
+        <div class="card">
+          BoomFlix is your daily shot of entertainment — short videos, best moments and viral highlights curated for pure fun. Follow us on social and never miss a drop!
+          <div class="row" style="margin-top:10px; gap:10px">
+            <a class="btn ghost" href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
+            <a class="btn ghost" href="https://youtube.com/@yourhandle" target="_blank" rel="noopener">YouTube</a>
+            <a class="btn ghost" href="mailto:contact@your-domain.example">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap footer">
+      © <span id="yr"></span> BoomFlix · All rights reserved.
+    </div>
+  </main>
+
+  <script>
+    // Simple demo data: replace with your YouTube IDs or MP4 links
+    const demoVideos = [
+      { id:"dQw4w9WgXcQ", title:"Fun Clip: Dance Craze!", views:"2.3M views", when:"2 days ago"},
+      { id:"kXYiU_JCYtU", title:"Epic Moments Compilation", views:"1.1M views", when:"4 days ago"},
+      { id:"J---aiyznGQ", title:"Try Not To Laugh Challenge", views:"980K views", when:"1 week ago"},
+      { id:"9bZkp7q19f0", title:"Viral Throwback", views:"3.4M views", when:"1 week ago"}
+    ];
+
+    function renderVideos(){
+      const grid = document.getElementById('videoGrid');
+      grid.innerHTML = demoVideos.map(v => `
+        <article class="video">
+          <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
+            <div class="thumb"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="${v.title}"></div>
+            <div class="meta">
+              <div class="t">${v.title}</div>
+              <div class="s">${v.views} · ${v.when}</div>
+            </div>
+          </a>
+        </article>`).join('');
+    }
+
+    function subscribe(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const list = JSON.parse(localStorage.getItem('bf_subs')||'[]');
+      if(list.includes(email)){
+        document.getElementById('subMsg').textContent = 'You are already subscribed!';
+      } else {
+        list.push(email); localStorage.setItem('bf_subs', JSON.stringify(list));
+        document.getElementById('subMsg').textContent = 'Thanks! You\'re subscribed.';
+        document.getElementById('email').value='';
+      }
+    }
+
+    function shareSite(){
+      const shareData={title:'BoomFlix', text:'Daily Entertainment & Viral Videos', url:location.href};
+      if(navigator.share){ navigator.share(shareData).catch(()=>{}); }
+      else { navigator.clipboard.writeText(location.href).then(()=>alert('Link copied! Paste anywhere to share.')).catch(()=>{}); }
+    }
+
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    renderVideos();
+  </script>
+</body>
+</html>
